@@ -25,17 +25,17 @@ pub trait UnwrapDisplay
 	*/
   type Inner;
 
-	/** Returns the inner value when there was no error.
+  /** Returns the inner value when there was no error.
 
-	When there was an error it panics displaying the error value.
-	*/
+  When there was an error it panics displaying the error value.
+  */
   #[track_caller]
   fn unwrap_display(self) -> Self::Inner;
 
-	/** Returns the inner value when there was no error.
+  /** Returns the inner value when there was no error.
 
-	When there was an error it panics displaying the passed code.
-	*/
+  When there was an error it panics displaying the passed code.
+  */
   #[track_caller]
   fn expect_display_code(self, code: &str) -> Self::Inner;
 }
@@ -49,23 +49,16 @@ impl<T, E: core::fmt::Display> UnwrapDisplay for Result<T, E>
     match self
     {
       Ok(x) => x,
-      Err(e) =>
-      {
-        panic!("{e}");
-      }
+      Err(e) => panic!("{e}"),
     }
   }
 
-  #[track_caller]
   fn expect_display_code(self, code: &str) -> Self::Inner
   {
     match self
     {
       Ok(x) => x,
-      Err(e) =>
-      {
-        panic!("{e}\ncode:\n```\n{code}\n```");
-      }
+      Err(e) => panic!("{e}\ncode:\n```\n{code}\n```"),
     }
   }
 }
