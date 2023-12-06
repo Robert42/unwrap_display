@@ -44,7 +44,7 @@ impl<T, E: core::fmt::Display> UnwrapDisplay for Result<T, E>
 {
   type Inner = T;
 
-  fn unwrap_display(self) -> T
+  fn unwrap_display(self) -> Self::Inner
   {
     match self
     {
