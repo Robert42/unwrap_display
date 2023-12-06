@@ -20,6 +20,7 @@ fn no_effect_when_ok()
 {
   assert_eq!(success(42).unwrap(), 42);
   assert_eq!(success(42).unwrap_display(), 42);
+  assert_eq!(success(42).expect_display_code("foo();\nbar();"), 42);
 }
 
 #[test]
@@ -34,4 +35,11 @@ fn unwrap_uses_debug()
 fn unwrap_display_uses_display()
 {
   failure(42).unwrap_display();
+}
+
+#[test]
+#[should_panic(expected = "```\nfoo();\nbar();\n```")]
+fn expect_display_code_uses_display()
+{
+  failure(42).expect_display_code("foo();\nbar();");
 }
