@@ -1,6 +1,6 @@
 [package]
 name = "unwrap_display"
-version = "0.0.0"
+version = "0.0.1"
 edition = "2021"
 description = "Like `unwrap` for Result but formats using `core::fmt::Display` trait instead of `core::fmt::Debug`."
 authors = ["Robert Hildebrandt"]
