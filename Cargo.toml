@@ -2,7 +2,10 @@
 name = "unwrap_display"
 version = "0.0.0"
 edition = "2021"
+description = "Like `unwrap` for Result but formats using `core::fmt::Display` trait instead of `core::fmt::Debug`."
 authors = ["Robert Hildebrandt"]
+
+keywords = ["unwrap", "Display", "Result"]
 
 license = "Apache-2.0"
 repository = "https://github.com/Robert42/unwrap_display"
