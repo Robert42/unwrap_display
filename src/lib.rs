@@ -21,8 +21,8 @@ Now you can write `do_something_interesting().unwrap_display()` in your tests an
 */
 pub trait UnwrapDisplay
 {
-	/** Type of the value to return if there was no error.
-	*/
+  /** Type of the value to return if there was no error.
+  */
   type Inner;
 
   /** Returns the inner value when there was no error.
