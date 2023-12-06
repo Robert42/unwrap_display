@@ -15,6 +15,7 @@ and
 methods to [`core::result::Result`].
 
 Now you can write `do_something_interesting().unwrap_display()` in your tests and get the error formatted with `Display` instead of `Debug.`
+Both are using the `#[track_caller]` attribute to simplify debugging.
 */
 
 /** A type implementing this trait provides the `unwrap_display` method 
